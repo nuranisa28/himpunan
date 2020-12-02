@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="../img/logo1.png">
+	<title>HIMPUNAN | Selisih Dua Himpunan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="cssmateri4_3(1).css">
+</head>
+<body>
+	<script src="../../tutorial/jstutorial.js"></script>
+
+
+	<header>
+		<a href="#" onclick="dafis()"><img src="../img/bar.png" class="bar"></a>
+		4. OPERASI HIMPUNAN
+		<a href=""><img src="../img/home2.png" class="home"></a>
+	</header>
+
+	<aside class="" id="dafis">
+		<div class="sidenav">
+			<center><h1>DAFTAR ISI</h1></center>
+			<a href="">Apersepsi</a>
+	  		<button class="dropdown-btn" onclick="ftampil()">1. Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi1_1/1/materi1_1(1).html">1.1 Pengertian Himpunan</a>
+	    			<a href="../../materi1_2/1/materi1_2(1).html">1.2 Notasi dan Anggota Himpunan</a>
+	    			<a href="../../materi1_3/1/materi1_3(1).html">1.3 Menyatakan Suatu Himpunan</a>
+	    			<a href="../../materi1_4/1/materi1_4(1).html">1.4 Himpunan Berhingga dan Himpunan tak Berhingga</a>
+	    			<a href="../../kuiss1/kuis_1.html">1.5 Kuis 1</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">2. Himpunan Kosong dan Himpunan Semesta<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi2_1/1/materi2_1(1).html">2.1 Himpunan Kosong</a>
+	    			<a href="../../materi2_2/1/materi2_2(1).html">2.2 Himpunan Semesta</a>
+	    			<a href="../../kuiss2/kuis_2.html">2.3 Kuis 2</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">3. Diagram Venn<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi3_1/1/materi3_1(1).html">3.1 Pengertian Diagram Venn</a>
+	    			<a href="../../materi3_2/1/materi3_2(1).html">3.2 Himpunan Bagian</a>
+	          		<a href="../../materi3_3/1/materi3_3(1).html">3.3 Himpunan Kuasa</a>
+	    			<a href="../../materi3_4/1/materi3_4(1).html">3.4 Komplemen Himpunan</a>
+	    			<a href="../../kuis3/kuis3.html">3.5 Kuis 3</a>
+	  			</div>
+	  		<button class="dropdown-btn aktif" onclick="ftampil()">4. Operasi Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-containerr">
+	    			<a href="../../materi4_1/1/materi4_1(1).html" >4.1 Irisan Himpunan</a>
+	    			<a href="../../materi4_2/1/materi4_2(1).html">4.2 Gabungan Himpunan</a>
+	          		<div class="aktif2"><a href="materi4_3(1).html" style="color: white;">4.3 Selisih Dua Himpunan</a></div>
+	    			<a href="../../kuis4/kuis4.html">4.4 Kuis 4</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">5. Penerapan Konsep Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a onclick="sbb51()">5.1 Penerapan Konsep Himpunan dalam Kehidupan Sehari-hari</a>
+	    			<a onclick="kuis5()">5.2 Kuis 5</a>
+	  			</div>
+			<a onclick="latihan()">6. Latihan</a>
+		</div>
+	</aside>
+	
+
+	<main class="main" id="main">
+		<!--tombol TOP-->
+		<button onclick="scrollToTop()" class="top" id="js-top" title="Kembali ke atas">&#8593;</button>
+		<center>
+			<div class="subbab">
+				4.3 SELISIH DUA HIMPUNAN
+			</div>
+		</center>
+		<div class="konten">
+			<div class="kliksyarat">
+				<a href="#syarat" onclick="syarat('syarat')"><img src="../img/sy.png" width="15px" height="15px"> Prasyarat (klik saya)<br></a>
+			</div>
+			<div class="syarat" id="syarat">
+				<ol>
+					<li>Siswa sudah mampu menyatakan notasi dari suatu himpunan</li>
+					<li>Siswa sudah mampu menyebutkan anggota dari suatu himpunan.</li>
+					<li>Siswa sudah mampu menyatakan himpunan.</li>
+					<li>Siswa sudah mampu menentukan himpunan semesta dari suatu himpunan.</li>
+					<li>Siswa sudah mampu menggambar diagram venn.</li>
+					<li>Siswa sudah mampu menentukan  irisan himpunan.</li>
+					<li>Siswa sudah mampu menentukan  gabungan himpunan.</li>
+				</ol>
+		    </div>
+			<div class="kliktujuan"><a href="#tujuan" onclick="tujuan('tujuan')"><img src="../img/tj.png" width="15px" height="15px"> Tujuan Pembelajaran (klik saya)<br></a></div>
+			<div class="tujuan" id="tujuan">
+				Setelah mempelajari topik ini, diharapkan siswa mampu menentukan selisih dari dua himpunan.
+			</div>
+			<br>
+			<hr>
+			<br>
+			<!--isi-->
+			<center><img src="../img/sel1.png" class="gambar2"> atau <img src="../img/sel2.png" class="gambar2"></center>
+			<p class="prf">Selisih dua himpunan, misal pada himpunan A terhadap himpunan B, adalah himpunan yang anggotanya merupakan <u>anggota himpunan A yang bukan anggota himpunan B</u>, dalam artian <b>“anggota himpunan A saja”</b>. Selisih himpunan A terhadap himpunan B dinotasikan dengan <b>A &minus; B</b>, dibaca <b>A selisih B</b>. Banyak anggota selisih himpunan A terhadap himpunan B dinotasikan dengan <b>n(A &minus; B)</b>.</p>
+			<br>
+			<br>
+			<img src="../img/amati.png" class="gambar"><br>
+			Perhatikanlah contoh di bawah ini!
+			<div class="pengertian">
+				<p>Diketahui C = {1, 3, 5, 7} dan D = {3, 4, 5, 6}. Tentukanlah C – D dan D – C!</p>
+				<br>
+				<b>Penyelesaian : </b>
+				<ol type="a">
+					<li>C – D
+						<ul>
+							<li>
+								Perhatikan kembali himpunan C dan himpunan D, apakah ada anggota himpunan C yang juga merupakan anggota himpunan D?<br>
+								<button class="cekulang" id="ada1" onclick="ada1()"><b>Ada</b></button>
+								<button class="cekulang" id="tdk1" onclick="tdk1()"><b>Tidak Ada</b></button>
+								<span class="icon" id="icon1"></span>
+								<div class="hilang" id="lanjut1">
+									<span class="hilang" id="bnr1">Jawabanmu tepat! </span>
+									<span class="hilang" id="slh1">Ups! Jawabanmu masih keliru. </span>
+									<br>
+									Terdapat anggota himpunan C yang juga merupakan anggota himpunan D. Apa saja itu? Coba kalian sebutkan dengan mengisi kotak kosong di bawah ini<br>
+									<h5>*isilah setiap kotak dengan 1 angka</h5>
+									<input type="text" class="input1" maxlength="1"> , 
+									<input type="text" class="input1" maxlength="1">
+									<span class="icon" id="icon2"></span>
+								</div>
+								<div class="hilang" id="lanjut2">
+									Jawabanmu tepat! 3 dan 5 merupakan anggota himpunan C yang juga merupakan anggota himpunan D.
+									<center>
+									<div class="contoh">
+										C = {1, <span class="slh"><b>3, 5</b></span>, 7} dan D = {<span class="slh"><b>3</b></span>, 4, <span class="slh"><b>5</b></span>, 6}
+									</div>
+									</center>
+								</div>
+							</li>
+							<li class="hilang" id="lanjut3">
+								Perlu diingat kembali, selisih dua himpunan adalah himpunan yang anggotanya merupakan <u>anggota himpunan pertama yang bukan anggota himpunan kedua</u>. Maka, 3 dan 5 kita coret/hilangkan dari himpunan C
+								<center>
+								<div class="contoh">
+									C = {1, <span class="slh"><b><s>3, 5</s></b></span>, 7}
+								</div>
+								</center>
+								Setelah 3 dan 5 dihilangkan, maka anggota himpunan C sisa apa saja? Coba kalian sebutkan dengan mengisi kotak kosong di bawah ini<br>
+								<h5>*isilah setiap kotak dengan 1 angka</h5>
+								<input type="text" class="input2" maxlength="1"> , 
+								<input type="text" class="input2" maxlength="1">
+								<span class="icon" id="icon3"></span>
+								<div class="hilang" id="lanjut4">
+									Jawabanmu tepat! Sehingga, selisih himpunan C terhadap himpunan D adalah :
+									<center>
+									<div class="contoh">
+										<b>C – D = {1, 7}</b> dengan n(C – D) = 2
+									</div>
+									</center>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="hilang" id="lanjut5">
+						D – C
+						<ul>
+							<li>
+								Kita sudah mengetahui bahwa 3 dan 5 merupakan anggota himpunan D yang juga merupakan anggota himpunan C. Maka untuk menentukan D – C, anggota 3 dan 5 kita coret/hilangkan dari himpunan D
+								<center>
+								<div class="contoh">
+									D = {<span class="slh"><b><s>3</s></b></span>, 4, <span class="slh"><b><s>5</s></b></span>, 6}
+								</div>
+								</center>
+								Setelah 3 dan 5 dihilangkan, maka anggota himpunan D sisa apa saja? Coba kalian sebutkan dengan mengisi kotak kosong di bawah ini<br>
+								<h5>*isilah setiap kotak dengan 1 angka</h5>
+								<input type="text" class="input3" maxlength="1"> , 
+								<input type="text" class="input3" maxlength="1">
+								<span class="icon" id="icon4"></span>
+								<div class="hilang" id="lanjut6">
+									Jawabanmu tepat! Sehingga, selisih himpunan D terhadap himpunan C adalah :
+									<center>
+									<div class="contoh">
+										<b>D – C = {4, 6}</b> dengan n(D – C) = 2
+									</div>
+									</center>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+			<div class="hilang" id="lanjut7">
+				<br>
+				<br>
+				<img src="../img/catatan.png" class="gambar">
+				<br>
+				*catatlah ke dalam buku catatanmu &#128516;<br>
+				<div class="catat">
+					<ul>
+						<li>Notasi pembentuk himpunan dari selisih himpunan A terhadap himpunan B adalah : <b>A &minus; B = {x | x &isin; A dan x &notin; B}</b>.</li>
+						<li>
+							Kata <b>"dan"</b> berarti <u>kedua syarat harus dipenuhi</u>. Dengan kata lain, x adalah anggota himpunan A dan x bukan anggota himpunan B.
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+		
+	</div>
+
+		<!--navigasi-->
+		<div class="nav">
+			<center>
+				<a href="../../materi4_2/4/materi4_2(4).html" class="tmbl">Materi Sebelumnya</a>
+				<a href="materi4_3(1).html" class="tmbl navaktif">1</a>
+				<a href="../2/materi4_3(2).html" class="tmbl">2</a>
+				<a href="../3/materi4_3(3).html" class="tmbl">3</a>
+				<a href="../4/materi4_3(4).html" class="tmbl">4</a>
+				<a href="../2/materi4_3(2).html" class="tmbl">Selanjutnya</a>
+			</center>
+		</div>
+		
+	</main>
+	<script src="jsmateri4_3(1).js"></script>
+</body>
+</html>

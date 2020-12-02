@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="../img/logo1.png">
+	<title>HIMPUNAN | Komplemen Himpunan</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="cssmateri3_4(3).css">
+</head>
+<body>
+	<script src="../../tutorial/jstutorial.js"></script>
+
+
+	<header>
+		<a href="#" onclick="dafis()"><img src="../img/bar.png" class="bar"></a>
+		3. DIAGRAM VENN
+		<a href=""><img src="../img/home2.png" class="home"></a>
+	</header>
+
+	<aside class="" id="dafis">
+		<div class="sidenav">
+			<center><h1>DAFTAR ISI</h1></center>
+			<a href="">Apersepsi</a>
+	  		<button class="dropdown-btn" onclick="ftampil()">1. Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi1_1/1/materi1_1(1).html">1.1 Pengertian Himpunan</a>
+	    			<a href="../../materi1_2/1/materi1_2(1).html">1.2 Notasi dan Anggota Himpunan</a>
+	    			<a href="../../materi1_3/1/materi1_3(1).html">1.3 Menyatakan Suatu Himpunan</a>
+	    			<a href="../../materi1_4/1/materi1_4(1).html">1.4 Himpunan Berhingga dan Himpunan tak Berhingga</a>
+	    			<a href="../../kuiss1/kuis_1.html">1.5 Kuis 1</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">2. Himpunan Kosong dan Himpunan Semesta<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi2_1/1/materi2_1(1).html">2.1 Himpunan Kosong</a>
+	    			<a href="../../materi2_2/1/materi2_2(1).html">2.2 Himpunan Semesta</a>
+	    			<a href="../../kuiss2/kuis_2.html">2.3 Kuis 2</a>
+	  			</div>
+	  		<button class="dropdown-btn aktif" onclick="ftampil()">3. Diagram Venn<i class="arrow down"></i></button>
+	  			<div class="dropdown-containerr">
+	    			<a href="../../materi3_1/1/materi3_1(1).html">3.1 Pengertian Diagram Venn</a>
+	    			<a href="../../materi3_2/1/materi3_2(1).html">3.2 Himpunan Bagian</a>
+	          		<a href="../../materi3_3/1/materi3_3(1).html">3.3 Himpunan Kuasa</a>
+	    			<div class="aktif2"><a href="../1/materi3_4(1).html" style="color: white;">3.4 Komplemen Himpunan</a></div>
+	    			<a href="../../kuis3/kuis3.html">3.5 Kuis 3</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">4. Operasi Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a onclick="sbb41()">4.1 Irisan Himpunan</a>
+	    			<a onclick="sbb42()">4.2 Gabungan Himpunan</a>
+	          		<a onclick="sbb43()">4.3 Selisih Dua Himpunan</a>
+	    			<a onclick="kuis4()">4.4 Kuis 4</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">5. Penerapan Konsep Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a onclick="sbb51()">5.1 Penerapan Konsep Himpunan dalam Kehidupan Sehari-hari</a>
+	    			<a onclick="kuis5()">5.2 Kuis 5</a>
+	  			</div>
+			<a onclick="latihan()">6. Latihan</a>
+		</div>
+	</aside>
+	
+
+	<main class="main" id="main">
+		<!--tombol TOP-->
+		<button onclick="scrollToTop()" class="top" id="js-top" title="Kembali ke atas">&#8593;</button>
+		<center>
+			<div class="subbab">
+				3.4 KOMPLEMEN HIMPUNAN
+			</div>
+		</center>
+		<div class="konten">
+			<!--isi-->
+			<img src="../img/mencoba.png" class="gambar"><br>
+			Cobalah jawab soal di bawah ini!
+			<!-- petunjuk -->
+	      	<div class="kliktunjuk"><a href="#tjk2" onclick="tjk2('tjk2')"><img src="../img/tjk.png" width="15px" height="15px"> Petunjuk (klik untuk menyembunyikan petunjuk)<br></a></div>
+	      	<div class="tjk1" id="tjk2">
+	      		<ul>
+	      			<li>Isilah kotak kosong dengan jawaban yang tepat.</li>
+	      			<li>Setelah menjawab soal, tekan tombol "Cek Jawaban"</li>
+			      	<li>Jika jawaban kamu benar, kotak akan berubah warna menjadi <b class="bnr">hijau</b> dan akan muncul icon <img src="../img/true.png" width="15px">.</li>
+			      	<li>Jika jawaban kamu salah, kotak akan berubah warna menjadi <b class="slh">merah</b>, akan muncul icon <img src="../img/false.png" width="15px">, dan tombol "Ulang".</li>
+			      	<li>Tekan tombol "Ulang" untuk mengulang menjawab soal.</li>
+			      	<li>Untuk menyatakan komplemen himpunan, misal pada himpunan A, bisa menggunakan <b>A'</b> atau <b>A<sup>c</sup></b></li>
+	      		</ul>
+			</div>
+
+			<!--nomor pertanyaan-->
+			<div class="number">
+			    <button class="nomortanya tmblAktif" onclick="bukaTanya(event, 'tanya1')">Coba 1</button>
+			    <button class="nomortanya" onclick="bukaTanya(event, 'tanya2')">Coba 2</button>
+			</div>
+
+			<!--pertanyaan 2--> 
+			<div class="pertanya tanyaAktif" id="tanya1">
+				
+				Diketahui S = {x | x &le; 20, x &isin; bilangan asli}. Tentukanlah komplemen dari himpunan A jika A = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}!<br>
+				Jawaban :<br>
+				<input type="text" class="input1" maxlength="1" id="jawab1">
+					<sup><input type="text" class="input3" maxlength="1" id="jawab3"></sup>
+				 = {<input type="text" class="input2" id="jawab2">}
+				<span class="icon" id="icon1"></span>
+				<br>
+				<button class="cekulang" onclick="cek1()"><b>Cek Jawaban</b></button>
+				<button class="cekulang hilang" onclick="ulang1()" id="ulang1"><b>Ulang</b></button>
+				<div class="bahas hilang" id="bnr1">
+					<span class="bnr">Jawaban kamu benar.</span> 
+					Diketahui S = {1, 2, 3, ..., 20} dan A = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20} maka A<sup><span id="kom1"></span></sup> = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19}
+				</div>
+				<div class="bahas hilang" id="slh1">
+					<span class="slh">Jawaban kamu salah.</span> Silahkan tekan tombol "Ulang".
+				</div>
+			</div>
+
+			<!--pertanyaan 3-->
+			<div class="pertanya" id="tanya2">
+				
+				Perhatikan diagram venn berikut
+				<center><img src="../img/contoh3.png" class="gambar2"></center>
+				Berdasarkan diagram venn di atas, tentukanlah komplemen dari himpunan A!<br>
+				Jawaban :<br>
+				<input type="text" class="input1" maxlength="1" id="jawab4">
+					<sup><input type="text" class="input3" maxlength="1" id="jawab5"></sup>
+				 = {<input type="text" class="input4" id="jawab6">}
+				<span class="icon" id="icon2"></span>
+				<br>
+				<button class="cekulang" onclick="cek2()"><b>Cek Jawaban</b></button>
+				<button class="cekulang hilang" onclick="ulang2()" id="ulang2"><b>Ulang</b></button>
+				<div class="bahas hilang" id="bnr2">
+					<span class="bnr">Jawaban kamu benar.</span> Diketahui S = {1, 2, 3, 4, 5} dan A = {2, 3, 5} maka A<sup><span id="kom2"></span></sup> = {1, 4}
+				</div>
+				<div class="bahas hilang" id="slh2">
+					<span class="slh">Jawaban kamu salah.</span> Silahkan tekan tombol "Ulang".
+				</div>
+			</div>
+		</div>
+
+		<!--navigasi-->
+		<div class="nav">
+			<center>
+				<a href="../2/materi3_4(2).html" class="tmbl">Sebelumnya</a>
+				<a href="../1/materi3_4(1).html" class="tmbl">1</a>
+				<a href="../2/materi3_4(2).html" class="tmbl">2</a>
+				<a href="materi3_4(3).html" class="tmbl navaktif">3</a>
+				<a href="../4/materi3_4(4).html" class="tmbl">4</a>
+				<a href="../4/materi3_4(4).html" class="tmbl">Selanjutnya</a>
+			</center>
+		</div>
+		
+	</main>
+	<script src="jsmateri3_4(3).js"></script>
+</body>
+</html>

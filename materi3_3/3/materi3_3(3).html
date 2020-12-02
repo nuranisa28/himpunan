@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="../img/logo1.png">
+	<title>HIMPUNAN | Himpunan Kuasa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="cssmateri3_3(3).css">
+</head>
+<body>
+	<script src="../../tutorial/jstutorial.js"></script>
+
+
+	<header>
+		<a href="#" onclick="dafis()"><img src="../img/bar.png" class="bar"></a>
+		3. DIAGRAM VENN
+		<a href=""><img src="../img/home2.png" class="home"></a>
+	</header>
+
+	<aside class="" id="dafis">
+		<div class="sidenav">
+			<center><h1>DAFTAR ISI</h1></center>
+			<a href="">Apersepsi</a>
+	  		<button class="dropdown-btn" onclick="ftampil()">1. Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi1_1/1/materi1_1(1).html">1.1 Pengertian Himpunan</a>
+	    			<a href="../../materi1_2/1/materi1_2(1).html">1.2 Notasi dan Anggota Himpunan</a>
+	    			<a href="../../materi1_3/1/materi1_3(1).html">1.3 Menyatakan Suatu Himpunan</a>
+	    			<a href="../../materi1_4/1/materi1_4(1).html">1.4 Himpunan Berhingga dan Himpunan tak Berhingga</a>
+	    			<a href="../../kuiss1/kuis_1.html">1.5 Kuis 1</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">2. Himpunan Kosong dan Himpunan Semesta<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a href="../../materi2_1/1/materi2_1(1).html">2.1 Himpunan Kosong</a>
+	    			<a href="../../materi2_2/1/materi2_2(1).html">2.2 Himpunan Semesta</a>
+	    			<a href="../../kuiss2/kuis_2.html">2.3 Kuis 2</a>
+	  			</div>
+	  		<button class="dropdown-btn aktif" onclick="ftampil()">3. Diagram Venn<i class="arrow down"></i></button>
+	  			<div class="dropdown-containerr">
+	    			<a href="../../materi3_1/1/materi3_1(1).html">3.1 Pengertian Diagram Venn</a>
+	    			<a href="../../materi3_2/1/materi3_2(1).html">3.2 Himpunan Bagian</a>
+	          		<div class="aktif2"><a href="../1/materi3_3(1).html" style="color: white;">3.3 Himpunan Kuasa</a></div>
+	    			<a href="../../materi3_4/1/materi3_4(1).html">3.4 Komplemen Himpunan</a>
+	    			<a href="../../kuis3/kuis3.html">3.5 Kuis 3</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">4. Operasi Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a onclick="sbb41()">4.1 Irisan Himpunan</a>
+	    			<a onclick="sbb42()">4.2 Gabungan Himpunan</a>
+	          		<a onclick="sbb43()">4.3 Selisih Dua Himpunan</a>
+	    			<a onclick="kuis4()">4.4 Kuis 4</a>
+	  			</div>
+	  		<button class="dropdown-btn" onclick="ftampil()">5. Penerapan Konsep Himpunan<i class="arrow down"></i></button>
+	  			<div class="dropdown-container">
+	    			<a onclick="sbb51()">5.1 Penerapan Konsep Himpunan dalam Kehidupan Sehari-hari</a>
+	    			<a onclick="kuis5()">5.2 Kuis 5</a>
+	  			</div>
+			<a onclick="latihan()">6. Latihan</a>
+		</div>
+	</aside>
+	
+
+	<main class="main" id="main">
+		<!--tombol TOP-->
+		<button onclick="scrollToTop()" class="top" id="js-top" title="Kembali ke atas">&#8593;</button>
+		<center>
+			<div class="subbab">
+				3.3 HIMPUNAN KUASA
+			</div>
+		</center>
+		<div class="konten">
+			<!--isi-->
+			<img src="../img/pertanyaan.png" class="gambar"><br>
+			<!-- petunjuk -->
+      		<div class="kliktunjuk"><a href="#tjk1" onclick="tjk1('tjk1')"><img src="../img/tjk.png" width="15px" height="15px"> Petunjuk (klik untuk menyembunyikan petunjuk)<br></a></div>
+      		<div class="tjk1" id="tjk1">
+      			<ul>
+      				<li>Pertanyaan ini berupa isian.</li>
+      				<li>Isilah kotak kosong dengan jawaban yang tepat.</li>
+      				<li>Setelah menjawab soal, tekan tombol "Cek Jawaban".</li>
+		      		<li>Jika jawaban kamu benar, kotak akan berubah warna menjadi <b class="bnr">hijau</b>.</li>
+		      		<li>Jika jawaban kamu salah, kotak akan berubah warna menjadi <b class="slh">merah</b> dan akan muncul tombol "Ulang".</li>
+		      		<li>Soal selanjutnya akan muncul jika jawabanmu benar.</li>
+      			</ul>
+			</div>
+			<div class="pengertian">
+				Jika B = {warna bendera negara Indonesia}, tentukanlah :
+				<ol type="a">
+					<li>
+						Himpunan B dengan metode tabulasi<br>
+						Jawaban : B = {<input type="text" class="jawab1" id="jawab1">}
+						<span class="icon" id="icon1"></span>
+						<br>
+						<button class="cekulang" onclick="cek1()" id="cek1"><b>Cek Jawaban</b></button>
+						<button class="cekulang hilang" onclick="ulang1()" id="ulang1"><b>Ulang</b></button>
+					</li>
+					<li class="hilang" id="lanjut1">
+						Banyak anggota himpunan B<br>
+						Jawaban : n(B) = <input type="text" class="jawab2" maxlength="1">
+						<span class="icon" id="icon2"></span>
+					</li>
+					<li class="hilang" id="lanjutt2">
+						Himpunan bagian dari himpunan B<br>
+						<table class="tabel1">
+							<tr>
+	      						<th>
+	      							Himpunan bagian dengan :
+	      						</th>
+	      						<th>
+	      							Himpunan
+	      						</th>
+	      					</tr>
+	      					<tr>
+	      						<td>0 anggota</td>
+	      						<td>
+	      							{ }
+	      						</td>
+	      					</tr>
+	      					<tr>
+	      						<td>1 anggota</td>
+	      						<td>
+	      							<span class="" id="ubah1">{<input type="text" class="jawab3" maxlength="5">}, {<input type="text" class="jawab3" maxlength="5">}</span>
+	      						</td>
+	      					</tr>
+	      					<tr class="hilang" id="lanjut2">
+	      						<td>2 anggota</td>
+	      						<td>
+	      							<span class="" id="ubah2">
+	      							{<input type="text" class="jawab4">}
+	      							</span>
+	      						</td>
+	      					</tr>
+						</table>
+						<span class="hilang" id="lanjut3">
+							Himpunan bagian dari himpunan B adalah { }, {merah}, {putih}, dan {merah,putih}.
+							<span class="icon" id="icon3"></span>
+						</span>
+					</li>
+					<li class="hilang" id="lanjut4">
+						Himpunan kuasa dari himpunan B<br>
+						<h5>*kotak yang berwarna biru adalah petunjuk jawaban</h5>
+						P(B) = {{ }, <input type="text" class="jawab5" id="jawab5" onclick="ubah1()">}
+						<span class="icon" id="icon4"></span><br>
+						<span id="ket1"></span>
+						<button class="cekulang" id="cek5" onclick="jawab5()"><b>Cek Jawaban</b></button>
+						<button class="cekulang hilang" onclick="ulang5()" id="ulang5"><b>Ulang</b></button>
+					</li>
+				</ol>
+				<span class="bnr hilang" id="lanjut5"><br><b>Jawaban kamu benar</b></span>
+			</div>
+			<br>
+			<!--rangkuman-->
+			<img src="../img/rangkuman.png" class="gambar"><br>
+			*catatlah ke dalam buku catatanmu &#128516;<br>
+			<div class="rangkum">
+	          <ul>
+	            <li>Himpunan kuasa adalah himpunan yang anggotanya merupakan <u>himpunan-himpunan bagian dari suatu himpunan</u>.</li>
+	            <li>Himpunan kuasa dari suatu himpunan, misal pada himpunan A, dinotasikan dengan <b>P(A)</b>.</li>
+	            <li>Banyak anggota himpunan kuasa dari himpunan A dinotasikan dengan <b>n(P(A))</b>.</li>
+	          </ul>
+	        </div>
+		</div>
+
+		<!--navigasi-->
+		<div class="nav">
+			<center>
+				<a href="../2/materi3_3(2).html" class="tmbl">Sebelumnya</a>
+				<a href="../1/materi3_3(1).html" class="tmbl">1</a>
+				<a href="../2/materi3_3(2).html" class="tmbl">2</a>
+				<a href="materi3_3(3).html" class="tmbl navaktif">3</a>
+				<a href="../../materi3_4/1/materi3_4(1).html" class="tmbl">Materi Selanjutnya</a>
+			</center>
+		</div>
+		
+	</main>
+	<script src="jsmateri3_3(3).js"></script>
+</body>
+</html>
