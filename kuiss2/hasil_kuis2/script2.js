@@ -21,7 +21,7 @@ let sekolahfix = '';
 
 
 function readlah() {
-    var task = firebase.database().ref("kuis2/");
+    var task = firebase.database().ref("kuiss2/");
     let tmp = document.querySelector('.disini');
     tmp.innerHTML = "";
     kelasnya = document.getElementById('kelas');

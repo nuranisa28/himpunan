@@ -7,19 +7,19 @@
 	<link rel="stylesheet" type="text/css" href="cssmateri3_1(5).css">
 </head>
 <body>
-	<script src="jsmateri3_1(5).js"></script>
+	
 	<script src="../../tutorial/jstutorial.js"></script>
 
 	<header>
 		<a href="#" onclick="dafis()"><img src="../img/bar.png" class="bar"></a>
 		3. DIAGRAM VENN
-		<a href=""><img src="../img/home2.png" class="home"></a>
+		<a href="../../index.html"><img src="../img/home2.png" class="home"></a>
 	</header>
 
 	<aside class="" id="dafis">
 		<div class="sidenav">
 			<center><h1>DAFTAR ISI</h1></center>
-			<a href="">Apersepsi</a>
+			<a href="../../apersepsi/aper.html">Apersepsi</a>
 	  		<button class="dropdown-btn" onclick="ftampil()">1. Himpunan<i class="arrow down"></i></button>
 	  			<div class="dropdown-container">
 	    			<a href="../../materi1_1/1/materi1_1(1).html">1.1 Pengertian Himpunan</a>
@@ -123,27 +123,109 @@
 	            			<button class="cekulang hilang" onclick="ulang12()" id="ulang12"><b>Ulang</b></button>
 						</li>
 						<li class="hilang" id="lanjut12">
-							Dari diagram venn di bawah ini, diagram venn manakah yang menggambarkan himpunan semesta dan himpunan A? (pilih salah satu)<br>
-							<center>
-				            <div class="hiddenradio">
-				              <label>
-				                <span class="pilihan">
-					                <input type="radio" name="pilih1" value="1" onclick="benar1()">
-					                <img src="../img/t1s1a.png" class="gambar2" id="benar1">
-				                </span>
-				              </label>
-				              <label>
-				              	<span class="pilihan">
-					                <input type="radio" name="pilih1" value="0" onclick="salah1()">
-					                <img src="../img/t1s1b.png" class="gambar2" id="salah1">
-					            </span>
-				              </label>
-				              <span id="icon13"></span>
-				            </div>
-				            <button class="cekulang hilang" onclick="ulang13()" id="ulang13"><b>Ulang</b></button>
+							Gambarlah diagram venn dari himpunan semesta dan himpunan A di atas dengan cara melengkapi tabel 2 pada bagian "Tahapan Menggambar Diagram Venn"!<br>
+							Susunlah tahapan menggambar diagram venn dengan cara menarik salah satu pilihan pada tabel 1 dan meletakkannya pada kolom tabel 2!<br>
+							Hasil gambar akan terlihat pada bagian "Diagram Venn".<br>
+							<h5>*jika kamu menggunakan perangkat <i>handphone</i>, tekan sedikit agak lama untuk menarik pilihan</h5>
+							<div>
+								<div class="kiri" id="kiri1">
+									<b><u>Tahapan Menggambar Diagram Venn</u></b><br>
+									<!-- pilihan -->
+									<h5 style="margin-top: 10px;" class="" id="tab1a">Tabel 1</h5>
+									<table class="tabel1" id="tab1b">
+										<tr>
+											<th>Pilihan</th>
+										</tr>
+										<tr>
+										<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil1b"> 
+											<span class="pilihan" id="p1b" draggable="true" ondragstart="drag(event)">Gambarkan himpunan A dengan lingkaran/kurva tertutup</span>
+										</td>
+										</tr>
+										<tr>
+										<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil1d">
+											<span class="pilihan" id="p1d" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan A di luar lingkaran</span>
+										</td>
+										</tr>
+										<tr>
+										<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil1c">
+											<span class="pilihan" id="p1c" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan A dengan noktah/titik di dalam lingkaran</span>
+										</td>
+										</tr>
+										<tr>
+										<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil1a">
+											<span class="pilihan" id="p1a" draggable="true" ondragstart="drag(event)">Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>
+										</td>
+										</tr>
+									</table>
+	
+									
+									<!-- urutan -->
+									<h5 class="" id="tab1c"><br>Tabel 2</h5>
+									<table class="tabel1">
+										<tr>
+										  <th>Tahap ke-</th>
+										  <th>Tahapan</th>
+										  <th></th>
+										</tr>
+										<tr>
+										  <td>
+											<center>1</center>
+										  </td>
+										  <td>
+											<span id="tb1a" class="jwb1" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon1a"></span>
+											<span id="tombol1a"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap12">
+										  <td>
+											<center>2</center>
+										  </td>
+										  <td>
+											<span id="tb1b" class="jwb1" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon1b"></span>
+											<span id="tombol1b"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap13">
+										  <td>
+											<center>3</center>
+										  </td>
+										  <td>
+											<span id="tb1c" class="jwb1" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon1c"></span>
+											<span id="tombol1c"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap14">
+											<td>
+												<center>4</center>
+											</td>
+											<td>
+											  <span id="tb1d" class="jwb1" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+											</td>
+											<td>
+											  <span id="icon1d"></span>
+											  <span id="tombol1d"></span>
+											</td>
+										  </tr>
+									</table>
+								</div>
+								<div class="kanan" id="kanan1">
+									<b><u>Diagram Venn</u></b><br>
+									<div id="gambar1"></div>
+									  <div id="ket1"></div>
+								</div>
+							</div>
 						</li>
 					</ol>
-					<br>
+					
 					<div class="bahas hilang" id="lanjut13">
 						<span class="bnr">Jawaban kamu benar</span>. Diketahui S = {1, 2, 3, 4, 5} dan A = {2, 3, 5} dengan diagram venn sebagai berikut :<br>
 						<center>
@@ -181,24 +263,106 @@
 	            			<button class="cekulang hilang" onclick="ulang22()" id="ulang22"><b>Ulang</b></button>
 						</li>
 						<li class="hilang" id="lanjut22">
-							Dari diagram venn di bawah ini, diagram venn manakah yang menggambarkan himpunan semesta dan himpunan B? (pilih salah satu)<br>
-							<center>
-				            <div class="hiddenradio">
-				              <label>
-				                <span class="pilihan">
-				                	<input type="radio" name="pilih2" value="0" onclick="salah2()">
-				                	<img src="../img/t1s2b.png" class="gambar2" id="salah2">
-				                </span>
-				              </label>
-				              <label>
-				              	<span class="pilihan">
-					                <input type="radio" name="pilih2" value="1" onclick="benar2()">
-					                <img src="../img/t1s2a.png" class="gambar2" id="benar2">
-				            	</span>
-				              </label>
-				              <span id="icon23"></span>
-				            </div>
-				            <button class="cekulang hilang" onclick="ulang23()" id="ulang23"><b>Ulang</b></button>
+							Gambarlah diagram venn dari himpunan semesta dan himpunan B di atas dengan cara melengkapi tabel 2 pada bagian "Tahapan Menggambar Diagram Venn"!<br>
+							Susunlah tahapan menggambar diagram venn dengan cara menarik salah satu pilihan pada tabel 1 dan meletakkannya pada kolom tabel 2!<br>
+							Hasil gambar akan terlihat pada bagian "Diagram Venn".<br>
+							<h5>*jika kamu menggunakan perangkat <i>handphone</i>, tekan sedikit agak lama untuk menarik pilihan</h5>
+							<div>
+								<div class="kiri" id="kiri2">
+									<b><u>Tahapan Menggambar Diagram Venn</u></b><br>
+									<!-- pilihan -->
+									<h5 style="margin-top: 10px;" class="" id="tab2a">Tabel 1</h5>
+									<table class="tabel1" id="tab2b">
+										<tr>
+											<th>Pilihan</th>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil2a">
+												<span class="pilihan" id="p2a" draggable="true" ondragstart="drag(event)">Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil2c">
+												<span class="pilihan" id="p2c" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan B dengan noktah/titik di dalam lingkaran</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil2b"> 
+												<span class="pilihan" id="p2b" draggable="true" ondragstart="drag(event)">Gambarkan himpunan B dengan lingkaran/kurva tertutup</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil2d">
+												<span class="pilihan" id="p2d" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan B di luar lingkaran</span>
+											</td>
+										</tr>
+									</table>
+	
+									
+									<!-- urutan -->
+									<h5 class="" id="tab2c"><br>Tabel 2</h5>
+									<table class="tabel1">
+										<tr>
+										  <th>Tahap ke-</th>
+										  <th>Tahapan</th>
+										  <th></th>
+										</tr>
+										<tr>
+										  <td>
+											<center>1</center>
+										  </td>
+										  <td>
+											<span id="tb2a" class="jwb2" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon2a"></span>
+											<span id="tombol2a"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap22">
+										  <td>
+											<center>2</center>
+										  </td>
+										  <td>
+											<span id="tb2b" class="jwb2" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon2b"></span>
+											<span id="tombol2b"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap23">
+										  <td>
+											<center>3</center>
+										  </td>
+										  <td>
+											<span id="tb2c" class="jwb2" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon2c"></span>
+											<span id="tombol2c"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap24">
+											<td>
+												<center>4</center>
+											</td>
+											<td>
+											  <span id="tb2d" class="jwb2" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+											</td>
+											<td>
+											  <span id="icon2d"></span>
+											  <span id="tombol2d"></span>
+											</td>
+										  </tr>
+									</table>
+								</div>
+								<div class="kanan" id="kanan2">
+									<b><u>Diagram Venn</u></b><br>
+									<div id="gambar2"></div>
+									  <div id="ket2"></div>
+								</div>
+							</div>
 						</li>
 					</ol>
 					<br>
@@ -239,24 +403,106 @@
 	            			<button class="cekulang hilang" onclick="ulang32()" id="ulang32"><b>Ulang</b></button>
 						</li>
 						<li class="hilang" id="lanjut32">
-							Dari diagram venn di bawah ini, diagram venn manakah yang menggambarkan himpunan semesta dan himpunan C? (pilih salah satu)<br>
-							<center>
-				            <div class="hiddenradio">
-				              <label>
-				                <span class="pilihan">
-				                	<input type="radio" name="pilih3" value="1" onclick="benar3()">
-				                	<img src="../img/t1s3a.png" class="gambar2" id="benar3">
-				                </span>
-				              </label>
-				              <label>
-				              	<span class="pilihan">
-					                <input type="radio" name="pilih3" value="0" onclick="salah3()">
-					                <img src="../img/t1s3b.png" class="gambar2" id="salah3">
-				            	</span>
-				              </label>
-				              <span id="icon33"></span>
-				            </div>
-				            <button class="cekulang hilang" onclick="ulang33()" id="ulang33"><b>Ulang</b></button>
+							Gambarlah diagram venn dari himpunan semesta dan himpunan C di atas dengan cara melengkapi tabel 2 pada bagian "Tahapan Menggambar Diagram Venn"!<br>
+							Susunlah tahapan menggambar diagram venn dengan cara menarik salah satu pilihan pada tabel 1 dan meletakkannya pada kolom tabel 2!<br>
+							Hasil gambar akan terlihat pada bagian "Diagram Venn".<br>
+							<h5>*jika kamu menggunakan perangkat <i>handphone</i>, tekan sedikit agak lama untuk menarik pilihan</h5>
+							<div>
+								<div class="kiri" id="kiri3">
+									<b><u>Tahapan Menggambar Diagram Venn</u></b><br>
+									<!-- pilihan -->
+									<h5 style="margin-top: 10px;" class="" id="tab3a">Tabel 1</h5>
+									<table class="tabel1" id="tab3b">
+										<tr>
+											<th>Pilihan</th>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil3c">
+												<span class="pilihan" id="p3c" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan C dengan noktah/titik di dalam lingkaran</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil3a">
+												<span class="pilihan" id="p3a" draggable="true" ondragstart="drag(event)">Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil3d">
+												<span class="pilihan" id="p3d" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan C di luar lingkaran</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil3b"> 
+												<span class="pilihan" id="p3b" draggable="true" ondragstart="drag(event)">Gambarkan himpunan C dengan lingkaran/kurva tertutup</span>
+											</td>
+										</tr>
+									</table>
+	
+									
+									<!-- urutan -->
+									<h5 class="" id="tab3c"><br>Tabel 2</h5>
+									<table class="tabel1">
+										<tr>
+										  <th>Tahap ke-</th>
+										  <th>Tahapan</th>
+										  <th></th>
+										</tr>
+										<tr>
+										  <td>
+											<center>1</center>
+										  </td>
+										  <td>
+											<span id="tb3a" class="jwb3" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon3a"></span>
+											<span id="tombol3a"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap32">
+										  <td>
+											<center>2</center>
+										  </td>
+										  <td>
+											<span id="tb3b" class="jwb3" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon3b"></span>
+											<span id="tombol3b"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap33">
+										  <td>
+											<center>3</center>
+										  </td>
+										  <td>
+											<span id="tb3c" class="jwb3" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon3c"></span>
+											<span id="tombol3c"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap34">
+											<td>
+												<center>4</center>
+											</td>
+											<td>
+											  <span id="tb3d" class="jwb3" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+											</td>
+											<td>
+											  <span id="icon3d"></span>
+											  <span id="tombol3d"></span>
+											</td>
+										  </tr>
+									</table>
+								</div>
+								<div class="kanan" id="kanan3">
+									<b><u>Diagram Venn</u></b><br>
+									<div id="gambar3"></div>
+									  <div id="ket3"></div>
+								</div>
+							</div>
 						</li>
 					</ol>
 					<br>
@@ -297,24 +543,106 @@
 	            			<button class="cekulang hilang" onclick="ulang42()" id="ulang42"><b>Ulang</b></button>
 						</li>
 						<li class="hilang" id="lanjut42">
-							Dari diagram venn di bawah ini, diagram venn manakah yang menggambarkan himpunan semesta dan himpunan D? (pilih salah satu)<br>
-							<center>
-				            <div class="hiddenradio">
-				              <label>
-				                <span class="pilihan">
-				                	<input type="radio" name="pilih4" value="1" onclick="benar4()">
-				                	<img src="../img/t1s4a.png" class="gambar2" id="benar4">
-				                </span>
-				              </label>
-				              <label>
-				              	<span class="pilihan">
-					                <input type="radio" name="pilih4" value="0" onclick="salah4()">
-					                <img src="../img/t1s4b.png" class="gambar2" id="salah4">
-				            	</span>
-				              </label>
-				              <span id="icon43"></span>
-				            </div>
-				            <button class="cekulang hilang" onclick="ulang43()" id="ulang43"><b>Ulang</b></button>
+							Gambarlah diagram venn dari himpunan semesta dan himpunan D di atas dengan cara melengkapi tabel 2 pada bagian "Tahapan Menggambar Diagram Venn"!<br>
+							Susunlah tahapan menggambar diagram venn dengan cara menarik salah satu pilihan pada tabel 1 dan meletakkannya pada kolom tabel 2!<br>
+							Hasil gambar akan terlihat pada bagian "Diagram Venn".<br>
+							<h5>*jika kamu menggunakan perangkat <i>handphone</i>, tekan sedikit agak lama untuk menarik pilihan</h5>
+							<div>
+								<div class="kiri" id="kiri4">
+									<b><u>Tahapan Menggambar Diagram Venn</u></b><br>
+									<!-- pilihan -->
+									<h5 style="margin-top: 10px;" class="" id="tab4a">Tabel 1</h5>
+									<table class="tabel1" id="tab4b">
+										<tr>
+											<th>Pilihan</th>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil4d">
+												<span class="pilihan" id="p4d" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan D di luar lingkaran</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil4b"> 
+												<span class="pilihan" id="p4b" draggable="true" ondragstart="drag(event)">Gambarkan himpunan D dengan lingkaran/kurva tertutup</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil4a">
+												<span class="pilihan" id="p4a" draggable="true" ondragstart="drag(event)">Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil4c">
+												<span class="pilihan" id="p4c" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan D dengan noktah/titik di dalam lingkaran</span>
+											</td>
+										</tr>
+									</table>
+	
+									
+									<!-- urutan -->
+									<h5 class="" id="tab4c"><br>Tabel 2</h5>
+									<table class="tabel1">
+										<tr>
+										  <th>Tahap ke-</th>
+										  <th>Tahapan</th>
+										  <th></th>
+										</tr>
+										<tr>
+										  <td>
+											<center>1</center>
+										  </td>
+										  <td>
+											<span id="tb4a" class="jwb4" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon4a"></span>
+											<span id="tombol4a"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap42">
+										  <td>
+											<center>2</center>
+										  </td>
+										  <td>
+											<span id="tb4b" class="jwb4" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon4b"></span>
+											<span id="tombol4b"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap43">
+										  <td>
+											<center>3</center>
+										  </td>
+										  <td>
+											<span id="tb4c" class="jwb4" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon4c"></span>
+											<span id="tombol4c"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap44">
+											<td>
+												<center>4</center>
+											</td>
+											<td>
+											  <span id="tb4d" class="jwb4" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+											</td>
+											<td>
+											  <span id="icon4d"></span>
+											  <span id="tombol4d"></span>
+											</td>
+										  </tr>
+									</table>
+								</div>
+								<div class="kanan" id="kanan4">
+									<b><u>Diagram Venn</u></b><br>
+									<div id="gambar4"></div>
+									  <div id="ket4"></div>
+								</div>
+							</div>
 						</li>
 					</ol>
 					<br>
@@ -355,24 +683,106 @@
 	            			<button class="cekulang hilang" onclick="ulang52()" id="ulang52"><b>Ulang</b></button>
 						</li>
 						<li class="hilang" id="lanjut52">
-							Dari diagram venn di bawah ini, diagram venn manakah yang menggambarkan himpunan semesta dan himpunan E? (pilih salah satu)<br>
-							<center>
-				            <div class="hiddenradio">
-				              <label>
-				                <span class="pilihan">
-				                	<input type="radio" name="pilih5" value="0" onclick="salah5()">
-					                <img src="../img/t1s5b.png" class="gambar2" id="salah5">
-				                </span>
-				              </label>
-				              <label>
-				              	<span class="pilihan">
-				              		<input type="radio" name="pilih5" value="1" onclick="benar5()">
-				                	<img src="../img/t1s5a.png" class="gambar2" id="benar5">
-				            	</span>
-				              </label>
-				              <span id="icon53"></span>
-				            </div>
-				            <button class="cekulang hilang" onclick="ulang53()" id="ulang53"><b>Ulang</b></button>
+							Gambarlah diagram venn dari himpunan semesta dan himpunan E di atas dengan cara melengkapi tabel 2 pada bagian "Tahapan Menggambar Diagram Venn"!<br>
+							Susunlah tahapan menggambar diagram venn dengan cara menarik salah satu pilihan pada tabel 1 dan meletakkannya pada kolom tabel 2!<br>
+							Hasil gambar akan terlihat pada bagian "Diagram Venn".<br>
+							<h5>*jika kamu menggunakan perangkat <i>handphone</i>, tekan sedikit agak lama untuk menarik pilihan</h5>
+							<div>
+								<div class="kiri" id="kiri5">
+									<b><u>Tahapan Menggambar Diagram Venn</u></b><br>
+									<!-- pilihan -->
+									<h5 style="margin-top: 10px;" class="" id="tab5a">Tabel 1</h5>
+									<table class="tabel1" id="tab5b">
+										<tr>
+											<th>Pilihan</th>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil5c">
+												<span class="pilihan" id="p5c" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan E dengan noktah/titik di dalam lingkaran</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil5a">
+												<span class="pilihan" id="p5a" draggable="true" ondragstart="drag(event)">Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil5b"> 
+												<span class="pilihan" id="p5b" draggable="true" ondragstart="drag(event)">Gambarkan himpunan E dengan lingkaran/kurva tertutup</span>
+											</td>
+										</tr>
+										<tr>
+											<td ondrop="drop(event)" ondragover="allowDrop(event)" id="pil5d">
+												<span class="pilihan" id="p5d" draggable="true" ondragstart="drag(event)">Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan E di luar lingkaran</span>
+											</td>
+										</tr>
+									</table>
+	
+									
+									<!-- urutan -->
+									<h5 class="" id="tab5c"><br>Tabel 2</h5>
+									<table class="tabel1">
+										<tr>
+										  <th>Tahap ke-</th>
+										  <th>Tahapan</th>
+										  <th></th>
+										</tr>
+										<tr>
+										  <td>
+											<center>1</center>
+										  </td>
+										  <td>
+											<span id="tb5a" class="jwb5" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon5a"></span>
+											<span id="tombol5a"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap52">
+										  <td>
+											<center>2</center>
+										  </td>
+										  <td>
+											<span id="tb5b" class="jwb5" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon5b"></span>
+											<span id="tombol5b"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap53">
+										  <td>
+											<center>3</center>
+										  </td>
+										  <td>
+											<span id="tb5c" class="jwb5" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+										  </td>
+										  <td>
+											<span id="icon5c"></span>
+											<span id="tombol5c"></span>
+										  </td>
+										</tr>
+										<tr class="hilang" id="tahap54">
+											<td>
+												<center>4</center>
+											</td>
+											<td>
+											  <span id="tb5d" class="jwb5" ondrop="drop(event)" ondragover="allowDrop(event)"></span>
+											</td>
+											<td>
+											  <span id="icon5d"></span>
+											  <span id="tombol5d"></span>
+											</td>
+										  </tr>
+									</table>
+								</div>
+								<div class="kanan" id="kanan5">
+									<b><u>Diagram Venn</u></b><br>
+									<div id="gambar5"></div>
+									  <div id="ket5"></div>
+								</div>
+							</div>
 						</li>
 					</ol>
 					<br>
@@ -383,6 +793,7 @@
 						</center>
 					</div>
 				</div>
+				
 				
 				<!--tombol nomor soal-->
 				<center>
@@ -677,5 +1088,7 @@
 		</div>
 		
 	</main>
+	
 </body>
+<script src="jsmateri3_1(5).js"></script>
 </html>

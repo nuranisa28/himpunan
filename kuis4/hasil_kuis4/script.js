@@ -20,7 +20,7 @@ let kelasfix = '';
 let sekolahfix = '';
 
 function readlah() {
-    var task = firebase.database().ref("kuis4/");
+    var task = firebase.database().ref("kuiss4/");
     let tmp = document.querySelector('.disini');
     tmp.innerHTML = "";
     kelasnya = document.getElementById('kelas');

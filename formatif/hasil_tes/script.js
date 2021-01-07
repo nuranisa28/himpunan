@@ -33,7 +33,7 @@ let kelasfix = '';
 let sekolahfix = '';
 
 function readlah() {
-    var task = firebase.database().ref("tesformatif/");
+    var task = firebase.database().ref("tesformatiff/");
     let tmp = document.querySelector('.disini');
     tmp.innerHTML = "";
     kelasnya = document.getElementById('kelas');

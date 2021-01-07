@@ -30,6 +30,20 @@ function dafis(){
   }
 }
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
 //top button
 // When the user scrolls down 20px from the top of the document,we will show the button
 window.onscroll = function(){
@@ -204,48 +218,157 @@ function ulang12(){
   document.getElementById('ulang12').className += ' hilang';
 }
 
-function benar1(){
-  var x = document.getElementsByName("pilih1");
-  var checked = false;
+var salah1a, salah1b, salah1c, salah1d=0;
+let jawaban1 = document.querySelectorAll('.jwb1');
+var p1a = document.getElementById("p1a").innerText;
+var p1b = document.getElementById("p1b").innerText;
+var p1c = document.getElementById("p1c").innerText;
+var p1d = document.getElementById("p1d").innerText;
+var tb1a = document.getElementById("tb1a");
+var tb1b = document.getElementById("tb1b");
+var tb1c = document.getElementById("tb1c");
+var tb1d = document.getElementById("tb1d");
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="1"){
-        document.getElementById("icon13").innerHTML = "<img src='../img/true.png' width='15px'>";
-        document.getElementById("benar1").className += " hijau";
-        document.getElementById("salah1").className += " hilang";
-        document.getElementById("lanjut13").className = document.getElementById("lanjut13").className.replace('hilang','');
-      } 
-    }
-  }
-}
+for(let i=0; i < jawaban1.length; i++){
 
-function salah1(){
-  var x = document.getElementsByName("pilih1");
-  var checked = false;
+  jawaban1[i].addEventListener("dragend", function() {
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="0"){
-        document.getElementById("icon13").innerHTML = "<img src='../img/false.png' width='15px'>";
-        document.getElementById("salah1").className += " merah";
-        document.getElementById("benar1").className += " hilang";
-        document.getElementById("ulang13").className = document.getElementById("ulang13").className.replace('hilang','');
+    if(i==0){
+      // tahap 1
+      if(tb1a.innerText==p1a){
+        document.getElementById("icon1a").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar1").innerHTML = "<img src='../venn/1.png' class='gambar3'>";
+        document.getElementById("tahap12").className = document.getElementById("tahap12").className.replace("hilang", "");
+      } else{
+        if(tb1a.innerText==p1b){
+          salah1a=2;
+        } else if (tb1a.innerText==p1c){
+          salah1a=3;
+        } else{
+          salah1a=4;
+        }
+        document.getElementById("icon1a").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol1a").innerHTML = "<button class='cekulang' onclick='ulang1a()'><b>Ulang</b></button>"
       }
     }
+
+    if(i==1){
+      //tahap 2
+      if(tb1b.innerText==p1b){
+        document.getElementById("icon1b").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar1").innerHTML = "<img src='../venn/s1a.png' class='gambar3'>";
+        document.getElementById("tahap13").className = document.getElementById("tahap13").className.replace("hilang", "");
+      } else{
+        if(tb1b.innerText==p1a){
+          salah1b=1;
+        } else if (tb1b.innerText==p1c){
+          salah1b=3;
+        } else{
+          salah1b=4;
+        }
+        document.getElementById("icon1b").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol1b").innerHTML = "<button class='cekulang' onclick='ulang1b()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==2){
+      //tahap 3
+      if(tb1c.innerText==p1c){
+        document.getElementById("icon1c").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar1").innerHTML = "<img src='../venn/s1b.png' class='gambar3'>";
+        document.getElementById("tahap14").className = document.getElementById("tahap14").className.replace("hilang", "");
+      } else{
+        if(tb1c.innerText==p1a){
+          salah1c=1;
+        } else if (tb1c.innerText==p1b){
+          salah1c=2;
+        } else{
+          salah1d=4;
+        }
+        document.getElementById("icon1c").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol1c").innerHTML = "<button class='cekulang' onclick='ulang1c()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==3){
+      //tahap 4
+      if(tb1d.innerText==p1d){
+        document.getElementById("icon1d").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar1").innerHTML = "<img src='../venn/s1c.png' class='gambar3'>";
+        document.getElementById("ket1").innerHTML = "<img src='../img/true.png' width='35px'>";
+        document.getElementById("lanjut13").className = document.getElementById("lanjut13").className.replace('hilang','');
+        document.getElementById("tab1a").className += " hilang";
+        document.getElementById("tab1b").className += " hilang";
+        document.getElementById("tab1c").className += " hilang";
+        document.getElementById("kiri1").className += " tinggi2";
+        document.getElementById("kanan1").className += " tinggi2";
+      } else{
+        if(tb1d.innerText==p1a){
+          salah1d=1;
+        } else if (tb1d.innerText==p1b){
+          salah1d=2;
+        } else{
+          salah1d=3;
+        }
+        document.getElementById("icon1d").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol1d").innerHTML = "<button class='cekulang' onclick='ulang1d()'><b>Ulang</b></button>"
+      }
+    }
+
+  })
+}
+function ulang1a(){
+  document.getElementById("tb1a").innerText = "";
+  document.getElementById("icon1a").innerHTML ="";
+  document.getElementById("tombol1a").innerHTML = "";
+  if(salah1a==2){
+    document.getElementById("pil1b").innerHTML = "<span class='pilihan' id='p1b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan A dengan lingkaran/kurva tertutup</span>";
+  } else if (salah1a==3){
+    document.getElementById("pil1c").innerHTML = "<span class='pilihan' id='p1c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan A dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil1d").innerHTML = "<span class='pilihan' id='p1d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan A di luar lingkaran</span>";
+  }
+}
+function ulang1b(){
+  document.getElementById("tb1b").innerText = "";
+  document.getElementById("icon1b").innerHTML ="";
+  document.getElementById("tombol1b").innerHTML = "";
+  if(salah1b==1){
+    document.getElementById("pil1a").innerHTML = "<span class='pilihan' id='p1a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah1b==3){
+    document.getElementById("pil1c").innerHTML = "<span class='pilihan' id='p1c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan A dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil1d").innerHTML = "<span class='pilihan' id='p1d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan A di luar lingkaran</span>";
+  }
+}
+function ulang1c(){
+  document.getElementById("tb1c").innerText = "";
+  document.getElementById("icon1c").innerHTML ="";
+  document.getElementById("tombol1c").innerHTML = "";
+  if(salah1c==1){
+    document.getElementById("pil1a").innerHTML = "<span class='pilihan' id='p1a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah1c==2){
+    document.getElementById("pil1b").innerHTML = "<span class='pilihan' id='p1b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan A dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil1d").innerHTML = "<span class='pilihan' id='p1d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan A di luar lingkaran</span>";
+  }
+}
+function ulang1d(){
+  document.getElementById("tb1d").innerText = "";
+  document.getElementById("icon1d").innerHTML ="";
+  document.getElementById("tombol1d").innerHTML = "";
+  if(salah1d==1){
+    document.getElementById("pil1a").innerHTML = "<span class='pilihan' id='p1a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah1d==2){
+    document.getElementById("pil1b").innerHTML = "<span class='pilihan' id='p1b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan A dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil1c").innerHTML = "<span class='pilihan' id='p1c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan A dengan noktah/titik di dalam lingkaran</span>";
   }
 }
 
-function ulang13(){
-  document.getElementById("icon13").innerHTML = "";
-  document.getElementById("benar1").className =  document.getElementById("benar1").className.replace('hilang','');
-  document.getElementById("salah1").className = document.getElementById("salah1").className.replace('merah','');
-  document.getElementById("ulang13").className += " hilang";
-}
 
 ////////////////////////////////////////
+
 
 function cek21(){
   var himp = document.getElementById("jwb21");
@@ -343,48 +466,157 @@ function ulang22(){
   document.getElementById('ulang22').className += ' hilang';
 }
 
-function benar2(){
-  var x = document.getElementsByName("pilih2");
-  var checked = false;
+var salah2a, salah2b, salah2c, salah2d=0;
+let jawaban2 = document.querySelectorAll('.jwb2');
+var p2a = document.getElementById("p2a").innerText;
+var p2b = document.getElementById("p2b").innerText;
+var p2c = document.getElementById("p2c").innerText;
+var p2d = document.getElementById("p2d").innerText;
+var tb2a = document.getElementById("tb2a");
+var tb2b = document.getElementById("tb2b");
+var tb2c = document.getElementById("tb2c");
+var tb2d = document.getElementById("tb2d");
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="1"){
-        document.getElementById("icon23").innerHTML = "<img src='../img/true.png' width='15px'>";
-        document.getElementById("benar2").className += " hijau";
-        document.getElementById("salah2").className += " hilang";
-        document.getElementById("lanjut23").className = document.getElementById("lanjut23").className.replace('hilang','');
-      } 
-    }
-  }
-}
+for(let i=0; i < jawaban2.length; i++){
 
-function salah2(){
-  var x = document.getElementsByName("pilih2");
-  var checked = false;
+  jawaban2[i].addEventListener("dragend", function() {
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="0"){
-        document.getElementById("icon23").innerHTML = "<img src='../img/false.png' width='15px'>";
-        document.getElementById("salah2").className += " merah";
-        document.getElementById("benar2").className += " hilang";
-        document.getElementById("ulang23").className = document.getElementById("ulang23").className.replace('hilang','');
+    if(i==0){
+      // tahap 1
+      if(tb2a.innerText==p2a){
+        document.getElementById("icon2a").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar2").innerHTML = "<img src='../venn/1.png' class='gambar3'>";
+        document.getElementById("tahap22").className = document.getElementById("tahap22").className.replace("hilang", "");
+      } else{
+        if(tb2a.innerText==p2b){
+          salah2a=2;
+        } else if (tb2a.innerText==p2c){
+          salah2a=3;
+        } else{
+          salah2a=4;
+        }
+        document.getElementById("icon2a").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol2a").innerHTML = "<button class='cekulang' onclick='ulang2a()'><b>Ulang</b></button>"
       }
     }
+
+    if(i==1){
+      //tahap 2
+      if(tb2b.innerText==p2b){
+        document.getElementById("icon2b").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar2").innerHTML = "<img src='../venn/s2a.png' class='gambar3'>";
+        document.getElementById("tahap23").className = document.getElementById("tahap23").className.replace("hilang", "");
+      } else{
+        if(tb2b.innerText==p2a){
+          salah2b=1;
+        } else if (tb2b.innerText==p2c){
+          salah2b=3;
+        } else{
+          salah2b=4;
+        }
+        document.getElementById("icon2b").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol2b").innerHTML = "<button class='cekulang' onclick='ulang2b()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==2){
+      //tahap 3
+      if(tb2c.innerText==p2c){
+        document.getElementById("icon2c").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar2").innerHTML = "<img src='../venn/s2b.png' class='gambar3'>";
+        document.getElementById("tahap24").className = document.getElementById("tahap24").className.replace("hilang", "");
+      } else{
+        if(tb2c.innerText==p2a){
+          salah2c=1;
+        } else if (tb2c.innerText==p2b){
+          salah2c=2;
+        } else{
+          salah2d=4;
+        }
+        document.getElementById("icon2c").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol2c").innerHTML = "<button class='cekulang' onclick='ulang2c()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==3){
+      //tahap 4
+      if(tb2d.innerText==p2d){
+        document.getElementById("icon2d").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar2").innerHTML = "<img src='../venn/s2c.png' class='gambar3'>";
+        document.getElementById("ket2").innerHTML = "<img src='../img/true.png' width='35px'>";
+        document.getElementById("lanjut23").className = document.getElementById("lanjut23").className.replace('hilang','');
+        document.getElementById("tab2a").className += " hilang";
+        document.getElementById("tab2b").className += " hilang";
+        document.getElementById("tab2c").className += " hilang";
+        document.getElementById("kiri2").className += " tinggi2";
+        document.getElementById("kanan2").className += " tinggi2";
+      } else{
+        if(tb2d.innerText==p2a){
+          salah2d=1;
+        } else if (tb2d.innerText==p2b){
+          salah2d=2;
+        } else{
+          salah2d=3;
+        }
+        document.getElementById("icon2d").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol2d").innerHTML = "<button class='cekulang' onclick='ulang2d()'><b>Ulang</b></button>"
+      }
+    }
+
+  })
+}
+function ulang2a(){
+  document.getElementById("tb2a").innerText = "";
+  document.getElementById("icon2a").innerHTML ="";
+  document.getElementById("tombol2a").innerHTML = "";
+  if(salah2a==2){
+    document.getElementById("pil2b").innerHTML = "<span class='pilihan' id='p2b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan B dengan lingkaran/kurva tertutup</span>";
+  } else if (salah2a==3){
+    document.getElementById("pil2c").innerHTML = "<span class='pilihan' id='p2c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan B dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil2d").innerHTML = "<span class='pilihan' id='p2d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan B di luar lingkaran</span>";
+  }
+}
+function ulang2b(){
+  document.getElementById("tb2b").innerText = "";
+  document.getElementById("icon2b").innerHTML ="";
+  document.getElementById("tombol2b").innerHTML = "";
+  if(salah2b==1){
+    document.getElementById("pil2a").innerHTML = "<span class='pilihan' id='p2a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah2b==3){
+    document.getElementById("pil2c").innerHTML = "<span class='pilihan' id='p2c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan B dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil2d").innerHTML = "<span class='pilihan' id='p2d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan B di luar lingkaran</span>";
+  }
+}
+function ulang2c(){
+  document.getElementById("tb2c").innerText = "";
+  document.getElementById("icon2c").innerHTML ="";
+  document.getElementById("tombol2c").innerHTML = "";
+  if(salah2c==1){
+    document.getElementById("pil2a").innerHTML = "<span class='pilihan' id='p2a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah2c==2){
+    document.getElementById("pil2b").innerHTML = "<span class='pilihan' id='p2b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan B dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil2d").innerHTML = "<span class='pilihan' id='p2d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan B di luar lingkaran</span>";
+  }
+}
+function ulang2d(){
+  document.getElementById("tb2d").innerText = "";
+  document.getElementById("icon2d").innerHTML ="";
+  document.getElementById("tombol2d").innerHTML = "";
+  if(salah2d==1){
+    document.getElementById("pil2a").innerHTML = "<span class='pilihan' id='p2a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah2d==2){
+    document.getElementById("pil2b").innerHTML = "<span class='pilihan' id='p2b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan B dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil2c").innerHTML = "<span class='pilihan' id='p2c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan B dengan noktah/titik di dalam lingkaran</span>";
   }
 }
 
-function ulang23(){
-  document.getElementById("icon23").innerHTML = "";
-  document.getElementById("benar2").className =  document.getElementById("benar2").className.replace('hilang','');
-  document.getElementById("salah2").className = document.getElementById("salah2").className.replace('merah','');
-  document.getElementById("ulang23").className += " hilang";
-}
 
 ////////////////////
+
 
 function cek31(){
   var himp = document.getElementById("jwb31");
@@ -484,48 +716,157 @@ function ulang32(){
   document.getElementById('ulang32').className += ' hilang';
 }
 
-function benar3(){
-  var x = document.getElementsByName("pilih3");
-  var checked = false;
+var salah3a, salah3b, salah3c, salah3d=0;
+let jawaban3 = document.querySelectorAll('.jwb3');
+var p3a = document.getElementById("p3a").innerText;
+var p3b = document.getElementById("p3b").innerText;
+var p3c = document.getElementById("p3c").innerText;
+var p3d = document.getElementById("p3d").innerText;
+var tb3a = document.getElementById("tb3a");
+var tb3b = document.getElementById("tb3b");
+var tb3c = document.getElementById("tb3c");
+var tb3d = document.getElementById("tb3d");
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="1"){
-        document.getElementById("icon33").innerHTML = "<img src='../img/true.png' width='15px'>";
-        document.getElementById("benar3").className += " hijau";
-        document.getElementById("salah3").className += " hilang";
-        document.getElementById("lanjut33").className = document.getElementById("lanjut33").className.replace('hilang','');
-      } 
-    }
-  }
-}
+for(let i=0; i < jawaban3.length; i++){
 
-function salah3(){
-  var x = document.getElementsByName("pilih3");
-  var checked = false;
+  jawaban3[i].addEventListener("dragend", function() {
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="0"){
-        document.getElementById("icon33").innerHTML = "<img src='../img/false.png' width='15px'>";
-        document.getElementById("salah3").className += " merah";
-        document.getElementById("benar3").className += " hilang";
-        document.getElementById("ulang33").className = document.getElementById("ulang33").className.replace('hilang','');
+    if(i==0){
+      // tahap 1
+      if(tb3a.innerText==p3a){
+        document.getElementById("icon3a").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar3").innerHTML = "<img src='../venn/1.png' class='gambar3'>";
+        document.getElementById("tahap32").className = document.getElementById("tahap32").className.replace("hilang", "");
+      } else{
+        if(tb3a.innerText==p3b){
+          salah3a=2;
+        } else if (tb3a.innerText==p3c){
+          salah3a=3;
+        } else{
+          salah3a=4;
+        }
+        document.getElementById("icon3a").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol3a").innerHTML = "<button class='cekulang' onclick='ulang3a()'><b>Ulang</b></button>"
       }
     }
+
+    if(i==1){
+      //tahap 2
+      if(tb3b.innerText==p3b){
+        document.getElementById("icon3b").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar3").innerHTML = "<img src='../venn/s3a.png' class='gambar3'>";
+        document.getElementById("tahap33").className = document.getElementById("tahap33").className.replace("hilang", "");
+      } else{
+        if(tb3b.innerText==p3a){
+          salah3b=1;
+        } else if (tb3b.innerText==p3c){
+          salah3b=3;
+        } else{
+          salah3b=4;
+        }
+        document.getElementById("icon3b").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol3b").innerHTML = "<button class='cekulang' onclick='ulang3b()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==2){
+      //tahap 3
+      if(tb3c.innerText==p3c){
+        document.getElementById("icon3c").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar3").innerHTML = "<img src='../venn/s3b.png' class='gambar3'>";
+        document.getElementById("tahap34").className = document.getElementById("tahap34").className.replace("hilang", "");
+      } else{
+        if(tb3c.innerText==p3a){
+          salah3c=1;
+        } else if (tb3c.innerText==p3b){
+          salah3c=2;
+        } else{
+          salah3d=4;
+        }
+        document.getElementById("icon3c").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol3c").innerHTML = "<button class='cekulang' onclick='ulang3c()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==3){
+      //tahap 4
+      if(tb3d.innerText==p3d){
+        document.getElementById("icon3d").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar3").innerHTML = "<img src='../venn/s3c.png' class='gambar3'>";
+        document.getElementById("ket3").innerHTML = "<img src='../img/true.png' width='35px'>";
+        document.getElementById("lanjut33").className = document.getElementById("lanjut33").className.replace('hilang','');
+        document.getElementById("tab3a").className += " hilang";
+        document.getElementById("tab3b").className += " hilang";
+        document.getElementById("tab3c").className += " hilang";
+        document.getElementById("kiri3").className += " tinggi2";
+        document.getElementById("kanan3").className += " tinggi2";
+      } else{
+        if(tb3d.innerText==p3a){
+          salah3d=1;
+        } else if (tb3d.innerText==p3b){
+          salah3d=2;
+        } else{
+          salah3d=3;
+        }
+        document.getElementById("icon3d").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol3d").innerHTML = "<button class='cekulang' onclick='ulang3d()'><b>Ulang</b></button>"
+      }
+    }
+
+  })
+}
+function ulang3a(){
+  document.getElementById("tb3a").innerText = "";
+  document.getElementById("icon3a").innerHTML ="";
+  document.getElementById("tombol3a").innerHTML = "";
+  if(salah3a==2){
+    document.getElementById("pil3b").innerHTML = "<span class='pilihan' id='p3b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan C dengan lingkaran/kurva tertutup</span>";
+  } else if (salah3a==3){
+    document.getElementById("pil3c").innerHTML = "<span class='pilihan' id='p3c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan C dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil3d").innerHTML = "<span class='pilihan' id='p3d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan C di luar lingkaran</span>";
+  }
+}
+function ulang3b(){
+  document.getElementById("tb3b").innerText = "";
+  document.getElementById("icon3b").innerHTML ="";
+  document.getElementById("tombol3b").innerHTML = "";
+  if(salah3b==1){
+    document.getElementById("pil3a").innerHTML = "<span class='pilihan' id='p3a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah3b==3){
+    document.getElementById("pil3c").innerHTML = "<span class='pilihan' id='p3c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan C dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil3d").innerHTML = "<span class='pilihan' id='p3d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan C di luar lingkaran</span>";
+  }
+}
+function ulang3c(){
+  document.getElementById("tb3c").innerText = "";
+  document.getElementById("icon3c").innerHTML ="";
+  document.getElementById("tombol3c").innerHTML = "";
+  if(salah3c==1){
+    document.getElementById("pil3a").innerHTML = "<span class='pilihan' id='p3a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah3c==2){
+    document.getElementById("pil3b").innerHTML = "<span class='pilihan' id='p3b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan C dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil3d").innerHTML = "<span class='pilihan' id='p3d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan C di luar lingkaran</span>";
+  }
+}
+function ulang3d(){
+  document.getElementById("tb3d").innerText = "";
+  document.getElementById("icon3d").innerHTML ="";
+  document.getElementById("tombol3d").innerHTML = "";
+  if(salah3d==1){
+    document.getElementById("pil3a").innerHTML = "<span class='pilihan' id='p3a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah3d==2){
+    document.getElementById("pil3b").innerHTML = "<span class='pilihan' id='p3b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan C dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil3c").innerHTML = "<span class='pilihan' id='p3c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan C dengan noktah/titik di dalam lingkaran</span>";
   }
 }
 
-function ulang33(){
-  document.getElementById("icon33").innerHTML = "";
-  document.getElementById("benar3").className =  document.getElementById("benar3").className.replace('hilang','');
-  document.getElementById("salah3").className = document.getElementById("salah3").className.replace('merah','');
-  document.getElementById("ulang33").className += " hilang";
-}
 
 //////////////////////////////
+
 
 function cek41(){
   var himp = document.getElementById("jwb41");
@@ -625,48 +966,157 @@ function ulang42(){
   document.getElementById('ulang42').className += ' hilang';
 }
 
-function benar4(){
-  var x = document.getElementsByName("pilih4");
-  var checked = false;
+var salah4a, salah4b, salah4c, salah4d=0;
+let jawaban4 = document.querySelectorAll('.jwb4');
+var p4a = document.getElementById("p4a").innerText;
+var p4b = document.getElementById("p4b").innerText;
+var p4c = document.getElementById("p4c").innerText;
+var p4d = document.getElementById("p4d").innerText;
+var tb4a = document.getElementById("tb4a");
+var tb4b = document.getElementById("tb4b");
+var tb4c = document.getElementById("tb4c");
+var tb4d = document.getElementById("tb4d");
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="1"){
-        document.getElementById("icon43").innerHTML = "<img src='../img/true.png' width='15px'>";
-        document.getElementById("benar4").className += " hijau";
-        document.getElementById("salah4").className += " hilang";
-        document.getElementById("lanjut43").className = document.getElementById("lanjut43").className.replace('hilang','');
-      } 
-    }
-  }
-}
+for(let i=0; i < jawaban4.length; i++){
 
-function salah4(){
-  var x = document.getElementsByName("pilih4");
-  var checked = false;
+  jawaban4[i].addEventListener("dragend", function() {
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="0"){
-        document.getElementById("icon43").innerHTML = "<img src='../img/false.png' width='15px'>";
-        document.getElementById("salah4").className += " merah";
-        document.getElementById("benar4").className += " hilang";
-        document.getElementById("ulang43").className = document.getElementById("ulang43").className.replace('hilang','');
+    if(i==0){
+      // tahap 1
+      if(tb4a.innerText==p4a){
+        document.getElementById("icon4a").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar4").innerHTML = "<img src='../venn/1.png' class='gambar3'>";
+        document.getElementById("tahap42").className = document.getElementById("tahap42").className.replace("hilang", "");
+      } else{
+        if(tb4a.innerText==p4b){
+          salah4a=2;
+        } else if (tb4a.innerText==p4c){
+          salah4a=3;
+        } else{
+          salah4a=4;
+        }
+        document.getElementById("icon4a").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol4a").innerHTML = "<button class='cekulang' onclick='ulang4a()'><b>Ulang</b></button>"
       }
     }
+
+    if(i==1){
+      //tahap 2
+      if(tb4b.innerText==p4b){
+        document.getElementById("icon4b").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar4").innerHTML = "<img src='../venn/s4a.png' class='gambar3'>";
+        document.getElementById("tahap43").className = document.getElementById("tahap43").className.replace("hilang", "");
+      } else{
+        if(tb4b.innerText==p4a){
+          salah4b=1;
+        } else if (tb4b.innerText==p4c){
+          salah4b=3;
+        } else{
+          salah4b=4;
+        }
+        document.getElementById("icon4b").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol4b").innerHTML = "<button class='cekulang' onclick='ulang4b()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==2){
+      //tahap 3
+      if(tb4c.innerText==p4c){
+        document.getElementById("icon4c").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar4").innerHTML = "<img src='../venn/s4b.png' class='gambar3'>";
+        document.getElementById("tahap44").className = document.getElementById("tahap44").className.replace("hilang", "");
+      } else{
+        if(tb4c.innerText==p4a){
+          salah4c=1;
+        } else if (tb4c.innerText==p4b){
+          salah4c=2;
+        } else{
+          salah4d=4;
+        }
+        document.getElementById("icon4c").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol4c").innerHTML = "<button class='cekulang' onclick='ulang4c()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==3){
+      //tahap 4
+      if(tb4d.innerText==p4d){
+        document.getElementById("icon4d").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar4").innerHTML = "<img src='../venn/s4c.png' class='gambar3'>";
+        document.getElementById("ket4").innerHTML = "<img src='../img/true.png' width='35px'>";
+        document.getElementById("lanjut43").className = document.getElementById("lanjut43").className.replace('hilang','');
+        document.getElementById("tab4a").className += " hilang";
+        document.getElementById("tab4b").className += " hilang";
+        document.getElementById("tab4c").className += " hilang";
+        document.getElementById("kiri4").className += " tinggi2";
+        document.getElementById("kanan4").className += " tinggi2";
+      } else{
+        if(tb4d.innerText==p4a){
+          salah4d=1;
+        } else if (tb4d.innerText==p4b){
+          salah4d=2;
+        } else{
+          salah4d=3;
+        }
+        document.getElementById("icon4d").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol4d").innerHTML = "<button class='cekulang' onclick='ulang4d()'><b>Ulang</b></button>"
+      }
+    }
+
+  })
+}
+function ulang4a(){
+  document.getElementById("tb4a").innerText = "";
+  document.getElementById("icon4a").innerHTML ="";
+  document.getElementById("tombol4a").innerHTML = "";
+  if(salah4a==2){
+    document.getElementById("pil4b").innerHTML = "<span class='pilihan' id='p4b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan D dengan lingkaran/kurva tertutup</span>";
+  } else if (salah4a==3){
+    document.getElementById("pil4c").innerHTML = "<span class='pilihan' id='p4c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan D dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil4d").innerHTML = "<span class='pilihan' id='p4d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan D di luar lingkaran</span>";
+  }
+}
+function ulang4b(){
+  document.getElementById("tb4b").innerText = "";
+  document.getElementById("icon4b").innerHTML ="";
+  document.getElementById("tombol4b").innerHTML = "";
+  if(salah4b==1){
+    document.getElementById("pil4a").innerHTML = "<span class='pilihan' id='p4a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah4b==3){
+    document.getElementById("pil4c").innerHTML = "<span class='pilihan' id='p4c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan D dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil4d").innerHTML = "<span class='pilihan' id='p4d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan D di luar lingkaran</span>";
+  }
+}
+function ulang4c(){
+  document.getElementById("tb4c").innerText = "";
+  document.getElementById("icon4c").innerHTML ="";
+  document.getElementById("tombol4c").innerHTML = "";
+  if(salah4c==1){
+    document.getElementById("pil4a").innerHTML = "<span class='pilihan' id='p4a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah4c==2){
+    document.getElementById("pil4b").innerHTML = "<span class='pilihan' id='p4b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan D dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil4d").innerHTML = "<span class='pilihan' id='p4d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan D di luar lingkaran</span>";
+  }
+}
+function ulang4d(){
+  document.getElementById("tb4d").innerText = "";
+  document.getElementById("icon4d").innerHTML ="";
+  document.getElementById("tombol4d").innerHTML = "";
+  if(salah4d==1){
+    document.getElementById("pil4a").innerHTML = "<span class='pilihan' id='p4a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah4d==2){
+    document.getElementById("pil4b").innerHTML = "<span class='pilihan' id='p4b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan D dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil4c").innerHTML = "<span class='pilihan' id='p4c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan D dengan noktah/titik di dalam lingkaran</span>";
   }
 }
 
-function ulang43(){
-  document.getElementById("icon43").innerHTML = "";
-  document.getElementById("benar4").className =  document.getElementById("benar4").className.replace('hilang','');
-  document.getElementById("salah4").className = document.getElementById("salah4").className.replace('merah','');
-  document.getElementById("ulang43").className += " hilang";
-}
 
 ///////////////////////////
+
 
 function cek51(){
   var himp = document.getElementById("jwb51");
@@ -765,45 +1215,152 @@ function ulang52(){
   document.getElementById('ulang52').className += ' hilang';
 }
 
-function benar5(){
-  var x = document.getElementsByName("pilih5");
-  var checked = false;
+var salah5a, salah5b, salah5c, salah5d=0;
+let jawaban5 = document.querySelectorAll('.jwb5');
+var p5a = document.getElementById("p5a").innerText;
+var p5b = document.getElementById("p5b").innerText;
+var p5c = document.getElementById("p5c").innerText;
+var p5d = document.getElementById("p5d").innerText;
+var tb5a = document.getElementById("tb5a");
+var tb5b = document.getElementById("tb5b");
+var tb5c = document.getElementById("tb5c");
+var tb5d = document.getElementById("tb5d");
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="1"){
-        document.getElementById("icon53").innerHTML = "<img src='../img/true.png' width='15px'>";
-        document.getElementById("benar5").className += " hijau";
-        document.getElementById("salah5").className += " hilang";
-        document.getElementById("lanjut53").className = document.getElementById("lanjut53").className.replace('hilang','');
-      } 
-    }
-  }
-}
+for(let i=0; i < jawaban5.length; i++){
 
-function salah5(){
-  var x = document.getElementsByName("pilih5");
-  var checked = false;
+  jawaban5[i].addEventListener("dragend", function() {
 
-  for(var i=0; i < x.length; i++){
-    if(x[i].checked){
-      checked = true;
-      if(x[i].value=="0"){
-        document.getElementById("icon53").innerHTML = "<img src='../img/false.png' width='15px'>";
-        document.getElementById("salah5").className += " merah";
-        document.getElementById("benar5").className += " hilang";
-        document.getElementById("ulang53").className = document.getElementById("ulang53").className.replace('hilang','');
+    if(i==0){
+      // tahap 1
+      if(tb5a.innerText==p5a){
+        document.getElementById("icon5a").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar5").innerHTML = "<img src='../venn/1.png' class='gambar3'>";
+        document.getElementById("tahap52").className = document.getElementById("tahap52").className.replace("hilang", "");
+      } else{
+        if(tb5a.innerText==p5b){
+          salah5a=2;
+        } else if (tb5a.innerText==p5c){
+          salah5a=3;
+        } else{
+          salah5a=4;
+        }
+        document.getElementById("icon5a").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol5a").innerHTML = "<button class='cekulang' onclick='ulang5a()'><b>Ulang</b></button>"
       }
     }
+
+    if(i==1){
+      //tahap 2
+      if(tb5b.innerText==p5b){
+        document.getElementById("icon5b").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar5").innerHTML = "<img src='../venn/s5a.png' class='gambar3'>";
+        document.getElementById("tahap53").className = document.getElementById("tahap53").className.replace("hilang", "");
+      } else{
+        if(tb5b.innerText==p5a){
+          salah5b=1;
+        } else if (tb5b.innerText==p5c){
+          salah5b=3;
+        } else{
+          salah5b=4;
+        }
+        document.getElementById("icon5b").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol5b").innerHTML = "<button class='cekulang' onclick='ulang5b()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==2){
+      //tahap 3
+      if(tb5c.innerText==p5c){
+        document.getElementById("icon5c").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar5").innerHTML = "<img src='../venn/s5b.png' class='gambar3'>";
+        document.getElementById("tahap54").className = document.getElementById("tahap54").className.replace("hilang", "");
+      } else{
+        if(tb5c.innerText==p5a){
+          salah5c=1;
+        } else if (tb5c.innerText==p5b){
+          salah5c=2;
+        } else{
+          salah5d=4;
+        }
+        document.getElementById("icon5c").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol5c").innerHTML = "<button class='cekulang' onclick='ulang5c()'><b>Ulang</b></button>"
+      }
+    }
+
+    if(i==3){
+      //tahap 4
+      if(tb5d.innerText==p5d){
+        document.getElementById("icon5d").innerHTML = "<img src='../img/true.png' width='15px'>";
+        document.getElementById("gambar5").innerHTML = "<img src='../venn/s5c.png' class='gambar3'>";
+        document.getElementById("ket5").innerHTML = "<img src='../img/true.png' width='35px'>";
+        document.getElementById("lanjut53").className = document.getElementById("lanjut53").className.replace('hilang','');
+        document.getElementById("tab5a").className += " hilang";
+        document.getElementById("tab5b").className += " hilang";
+        document.getElementById("tab5c").className += " hilang";
+        document.getElementById("kiri5").className += " tinggi2";
+        document.getElementById("kanan5").className += " tinggi2";
+      } else{
+        if(tb5d.innerText==p5a){
+          salah5d=1;
+        } else if (tb5d.innerText==p5b){
+          salah5d=2;
+        } else{
+          salah5d=3;
+        }
+        document.getElementById("icon5d").innerHTML = "<img src='../img/false.png' width='15px'>";
+        document.getElementById("tombol5d").innerHTML = "<button class='cekulang' onclick='ulang5d()'><b>Ulang</b></button>"
+      }
+    }
+
+  })
+}
+function ulang5a(){
+  document.getElementById("tb5a").innerText = "";
+  document.getElementById("icon5a").innerHTML ="";
+  document.getElementById("tombol5a").innerHTML = "";
+  if(salah5a==2){
+    document.getElementById("pil5b").innerHTML = "<span class='pilihan' id='p5b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan E dengan lingkaran/kurva tertutup</span>";
+  } else if (salah5a==3){
+    document.getElementById("pil5c").innerHTML = "<span class='pilihan' id='p5c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan E dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil5d").innerHTML = "<span class='pilihan' id='p5d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan E di luar lingkaran</span>";
   }
 }
-
-function ulang53(){
-  document.getElementById("icon53").innerHTML = "";
-  document.getElementById("benar5").className =  document.getElementById("benar5").className.replace('hilang','');
-  document.getElementById("salah5").className = document.getElementById("salah5").className.replace('merah','');
-  document.getElementById("ulang53").className += " hilang";
+function ulang5b(){
+  document.getElementById("tb5b").innerText = "";
+  document.getElementById("icon5b").innerHTML ="";
+  document.getElementById("tombol5b").innerHTML = "";
+  if(salah5b==1){
+    document.getElementById("pil5a").innerHTML = "<span class='pilihan' id='p5a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah5b==3){
+    document.getElementById("pil5c").innerHTML = "<span class='pilihan' id='p5c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan E dengan noktah/titik di dalam lingkaran</span>";
+  } else{
+    document.getElementById("pil5d").innerHTML = "<span class='pilihan' id='p5d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan E di luar lingkaran</span>";
+  }
+}
+function ulang5c(){
+  document.getElementById("tb5c").innerText = "";
+  document.getElementById("icon5c").innerHTML ="";
+  document.getElementById("tombol5c").innerHTML = "";
+  if(salah5c==1){
+    document.getElementById("pil5a").innerHTML = "<span class='pilihan' id='p5a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah5c==2){
+    document.getElementById("pil5b").innerHTML = "<span class='pilihan' id='p5b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan E dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil5d").innerHTML = "<span class='pilihan' id='p5d' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan S yang bukan merupakan anggota himpunan E di luar lingkaran</span>";
+  }
+}
+function ulang5d(){
+  document.getElementById("tb5d").innerText = "";
+  document.getElementById("icon5d").innerHTML ="";
+  document.getElementById("tombol5d").innerHTML = "";
+  if(salah5d==1){
+    document.getElementById("pil5a").innerHTML = "<span class='pilihan' id='p5a' draggable='true' ondragstart='drag(event)'>Buatlah persegi panjang dan notasi S pada sudut kiri atas</span>";
+  } else if (salah5d==2){
+    document.getElementById("pil5b").innerHTML = "<span class='pilihan' id='p5b' draggable='true' ondragstart='drag(event)'>Gambarkan himpunan E dengan lingkaran/kurva tertutup</span>";
+  } else{
+    document.getElementById("pil5c").innerHTML = "<span class='pilihan' id='p4c' draggable='true' ondragstart='drag(event)'>Tuliskan anggota himpunan E dengan noktah/titik di dalam lingkaran</span>";
+  }
 }
 
 //////////////////////////////

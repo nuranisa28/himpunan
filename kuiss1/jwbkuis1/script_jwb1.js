@@ -34,7 +34,7 @@ let cek11 = 0;
 
 
 function readlah() {
-    var task = firebase.database().ref("kuis1/");
+    var task = firebase.database().ref("kuiss1/");
     // var task = firebase.database().ref("kuis1_sebelumtes/");
 
     tmp.innerHTML = "";

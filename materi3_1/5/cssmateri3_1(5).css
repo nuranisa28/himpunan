@@ -286,20 +286,23 @@ main{
 
 .tabel1, .tabel3{
   border-collapse: collapse;
-  width: 65%;
+  font-size: 15px;
+  /* width: 65%; */
 }
 
 .tabel1 td, .tabel1 th {
   border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+  padding: 5px;
+  background-color: #f2f2f2;
+  /* width: 100%; */
+  /* text-align: center; */
 }
 
-.tabel1 tr:nth-child(even){background-color: #f2f2f2;}
+/* .tabel1 tr:nth-child(even){background-color: #f2f2f2;} */
 
 .tabel1 th, .tabel3 th{
-  padding-top: 12px;
-    padding-bottom: 12px;
+  padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
     background-color: rgb(168, 194, 251);
 }
@@ -353,12 +356,13 @@ main{
   width: 10%;
 }
 
-.jwb{
-  width: 95%;
-  height: 20px;
+.jwb1, .jwb2, .jwb3, .jwb4, .jwb5{
+  width: 100%;
+  min-height: 25px;
   display: inline-block;
-  padding-top: 3px;
-  margin: 0px 5px 0px 5px;
+  border-bottom: 1px solid black;
+  /* padding-bottom: 2px; */
+  /* margin: 0px 5px 0px 5px; */
 }
 
 .cekulang{
@@ -383,16 +387,16 @@ main{
 }
 
 .bahas{
-  min-height: 5px;
-  border-style: dotted;
+  /* min-height: 5px; */
+  /* border-style: dotted;
   border-color:rgb(3, 31, 75);
   border-radius: 10px;
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; */
   padding: 10px;
   margin-top: 5px;
   text-align: justify;
   width: 97%;
-
+  position: inherit;
 }
 
 .bahas li{
@@ -400,7 +404,7 @@ main{
 }
 
 .pilihan{
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 /* HIDE RADIO */
@@ -467,6 +471,32 @@ main{
 
 .top{
   display: none;
+}
+
+.kiri{
+  width: 55%;
+  height: 450px;
+  float: left;
+  padding: 10px 10px 0px 0px;
+  margin-bottom: 15px;
+}
+
+.kanan{
+  width: 40%;
+  height: 450px;
+  float: left;
+  overflow: auto;
+  border-left: 3px solid rgb(3, 31, 75);
+  margin-bottom: 15px;
+  padding: 10px 0px 0px 10px;
+}
+
+.tinggi2{
+  height: 300px;
+}
+
+.gambar3{
+  width: 80%;
 }
 
 @media screen and (max-width: 992px){
@@ -555,11 +585,11 @@ main{
   .cekulang{
     padding: 5px;
   }
-  .jwb{
-    width: 90%;
+  .jwb1, .jwb2, .jwb3, .jwb4, .jwb5{
+    /* width: 90%; */
     padding-top: 2px;
-    height: 20px;
-    margin: 0px 5px 0px 5px;
+    min-height: 20px;
+    /* margin: 0px 5px 0px 5px; */
   }
   .divscratch{
     overflow-y: hidden;
@@ -571,10 +601,13 @@ main{
     height: 302px;
   }
   .gambar2{
-    width: 45%;
+    width: 50%;
+  }
+  .gambar3{
+    width: 65%;
   }
   .bahas{
-    width: 92%;
+    /* width: 92%; */
   }
   .rangkum{
     width: 90%;
@@ -602,5 +635,20 @@ main{
   .top:hover {
     background-color: rgb(168, 194, 251);
     color: black;
+  }
+  .kiri{
+    width: 100%;
+    float: none;
+    height: auto;
+    padding-top: 10px;
+  }
+  .kanan{
+    width: 100%;
+    float: none;
+    height: auto;
+    overflow: none;
+  }
+  .tinggi2{
+    height: auto;
   }
 }

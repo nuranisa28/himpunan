@@ -47,7 +47,7 @@ let cek11 = 0;
 
 
 function readlah() {
-    var task = firebase.database().ref("tesformatif/");
+    var task = firebase.database().ref("tesformatiff/");
 
     tmp.innerHTML = "";
     if (kelasnya.value == "1") {

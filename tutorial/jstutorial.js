@@ -1,4 +1,11 @@
 //untuk memasukkan nilai ke variabel localstorage
+// localStorage.setItem("skkuis1",80);
+// localStorage.setItem("skkuis2",80);
+// localStorage.setItem("skkuis3",80);
+// localStorage.setItem("skkuis4",80);
+// localStorage.setItem("skkuis5",80);
+
+//untuk memasukkan nilai ke variabel localstorage
 // localStorage.setItem("skkuis1",0);
 // localStorage.setItem("skkuis2",0);
 // localStorage.setItem("skkuis3",0);
